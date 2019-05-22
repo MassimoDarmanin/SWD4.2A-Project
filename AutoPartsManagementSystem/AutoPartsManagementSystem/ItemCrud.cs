@@ -142,7 +142,7 @@ namespace AutoPartsManagementSystem
 
         private void insBtn_Click(object sender, EventArgs e)
         {
-            string insQuery = "INSERT INTO Parts, Make, Model, Categories(PartNo, PartName, PartValue, PartDescription, ModelID, CategoryID) VALUES ('" + noBox.Text + "','" + nameBox.Text + "','" + valueBox.Text + "','" + descBox.Text + "','" + modelBox.Text + "','" + catBox.Text + "')";
+            string insQuery = "INSERT INTO Parts (PartNo, PartName, PartValue, PartDescription, ModelID, CategoryID) VALUES ('" + noBox.Text + "','" + nameBox.Text + "','" + valueBox.Text + "','" + descBox.Text + "','" + modelBox.Text + "','" + catBox.Text + "')";
             doQuery(insQuery);
         }
 
@@ -154,7 +154,7 @@ namespace AutoPartsManagementSystem
 
         private void delBtn_Click(object sender, EventArgs e)
         {
-            string delQuery = "DELETE FROM Parts, Make, Model, Categories WHERE PartNo=" + noBox.Text;
+            string delQuery = "DELETE FROM Parts WHERE PartNo=" + noBox.Text;
             doQuery(delQuery);
         }
 
@@ -222,7 +222,7 @@ namespace AutoPartsManagementSystem
 
         private void filterBtn_Click(object sender, EventArgs e)
         {
-            FilterItems fi = new FilterItems();
+            TableofContent fi = new TableofContent();
             fi.Show();
         }
 

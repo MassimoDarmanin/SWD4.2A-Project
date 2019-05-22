@@ -16,3 +16,4 @@ C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSyste
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.ClientCrud.resources
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.ItemCrud.resources
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.CrudForm.resources
+C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.TableofContent.resources

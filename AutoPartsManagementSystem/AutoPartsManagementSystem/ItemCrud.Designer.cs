@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.filterBtn = new System.Windows.Forms.Button();
+            this.catBox = new System.Windows.Forms.TextBox();
+            this.modelBox = new System.Windows.Forms.TextBox();
+            this.makeBox = new System.Windows.Forms.TextBox();
             this.saveImgBtn = new System.Windows.Forms.Button();
             this.picBtn = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -55,10 +59,6 @@
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.makeBox = new System.Windows.Forms.TextBox();
-            this.modelBox = new System.Windows.Forms.TextBox();
-            this.catBox = new System.Windows.Forms.TextBox();
-            this.filterBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,6 +88,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(887, 188);
             this.panel2.TabIndex = 6;
+            // 
+            // filterBtn
+            // 
+            this.filterBtn.Location = new System.Drawing.Point(753, 155);
+            this.filterBtn.Name = "filterBtn";
+            this.filterBtn.Size = new System.Drawing.Size(75, 21);
+            this.filterBtn.TabIndex = 54;
+            this.filterBtn.Text = "Table";
+            this.toolTip1.SetToolTip(this.filterBtn, "Opens a new window in order to filter and search for a specific item");
+            this.filterBtn.UseVisualStyleBackColor = true;
+            this.filterBtn.Click += new System.EventHandler(this.filterBtn_Click);
+            // 
+            // catBox
+            // 
+            this.catBox.Location = new System.Drawing.Point(120, 127);
+            this.catBox.Name = "catBox";
+            this.catBox.Size = new System.Drawing.Size(291, 20);
+            this.catBox.TabIndex = 41;
+            // 
+            // modelBox
+            // 
+            this.modelBox.Location = new System.Drawing.Point(120, 102);
+            this.modelBox.Name = "modelBox";
+            this.modelBox.Size = new System.Drawing.Size(291, 20);
+            this.modelBox.TabIndex = 40;
+            // 
+            // makeBox
+            // 
+            this.makeBox.Location = new System.Drawing.Point(120, 76);
+            this.makeBox.Name = "makeBox";
+            this.makeBox.Size = new System.Drawing.Size(291, 20);
+            this.makeBox.TabIndex = 39;
             // 
             // saveImgBtn
             // 
@@ -275,38 +307,6 @@
             this.toolTip2.SetToolTip(this.insBtn, "Leave Part no. field empty and fill only the rest of the Fields");
             this.insBtn.UseVisualStyleBackColor = true;
             this.insBtn.Click += new System.EventHandler(this.insBtn_Click);
-            // 
-            // makeBox
-            // 
-            this.makeBox.Location = new System.Drawing.Point(120, 76);
-            this.makeBox.Name = "makeBox";
-            this.makeBox.Size = new System.Drawing.Size(291, 20);
-            this.makeBox.TabIndex = 39;
-            // 
-            // modelBox
-            // 
-            this.modelBox.Location = new System.Drawing.Point(120, 102);
-            this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(291, 20);
-            this.modelBox.TabIndex = 40;
-            // 
-            // catBox
-            // 
-            this.catBox.Location = new System.Drawing.Point(120, 127);
-            this.catBox.Name = "catBox";
-            this.catBox.Size = new System.Drawing.Size(291, 20);
-            this.catBox.TabIndex = 41;
-            // 
-            // filterBtn
-            // 
-            this.filterBtn.Location = new System.Drawing.Point(753, 155);
-            this.filterBtn.Name = "filterBtn";
-            this.filterBtn.Size = new System.Drawing.Size(75, 21);
-            this.filterBtn.TabIndex = 54;
-            this.filterBtn.Text = "Filter";
-            this.toolTip1.SetToolTip(this.filterBtn, "Opens a new window in order to filter and search for a specific item");
-            this.filterBtn.UseVisualStyleBackColor = true;
-            this.filterBtn.Click += new System.EventHandler(this.filterBtn_Click);
             // 
             // ItemCrud
             // 

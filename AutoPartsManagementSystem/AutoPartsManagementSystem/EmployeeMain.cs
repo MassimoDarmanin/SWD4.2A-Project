@@ -119,6 +119,13 @@ namespace AutoPartsManagementSystem
             print.PrintDataGridView(Grid1);
         }
 
+        private void logBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm fi = new LoginForm();
+            fi.Show();
+        }
+
         /*private void EmployeeMain_Load(object sender, EventArgs e)
         {
             String sqlSelectQuery = "SELECT EmployeeName, EmployeeSurname FROM Employees, Users WHERE Users.UserName= ";

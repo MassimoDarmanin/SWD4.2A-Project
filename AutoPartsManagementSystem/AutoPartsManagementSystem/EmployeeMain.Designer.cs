@@ -336,6 +336,7 @@
             this.logBtn.Text = "Log Out";
             this.toolTip4.SetToolTip(this.logBtn, "Redirect to login screen");
             this.logBtn.UseVisualStyleBackColor = true;
+            this.logBtn.Click += new System.EventHandler(this.logBtn_Click);
             // 
             // panel1
             // 

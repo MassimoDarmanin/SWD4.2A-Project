@@ -74,9 +74,6 @@
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.topLabel = new System.Windows.Forms.Label();
-            this.nLabel = new System.Windows.Forms.Label();
-            this.sLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -482,42 +479,12 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // topLabel
-            // 
-            this.topLabel.AutoSize = true;
-            this.topLabel.Location = new System.Drawing.Point(12, 19);
-            this.topLabel.Name = "topLabel";
-            this.topLabel.Size = new System.Drawing.Size(52, 13);
-            this.topLabel.TabIndex = 12;
-            this.topLabel.Text = "Welcome";
-            // 
-            // nLabel
-            // 
-            this.nLabel.AutoSize = true;
-            this.nLabel.Location = new System.Drawing.Point(70, 19);
-            this.nLabel.Name = "nLabel";
-            this.nLabel.Size = new System.Drawing.Size(17, 13);
-            this.nLabel.TabIndex = 13;
-            this.nLabel.Text = "//";
-            // 
-            // sLabel
-            // 
-            this.sLabel.AutoSize = true;
-            this.sLabel.Location = new System.Drawing.Point(137, 19);
-            this.sLabel.Name = "sLabel";
-            this.sLabel.Size = new System.Drawing.Size(17, 13);
-            this.sLabel.TabIndex = 14;
-            this.sLabel.Text = "//";
-            // 
             // ManagerMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(844, 639);
-            this.Controls.Add(this.sLabel);
-            this.Controls.Add(this.nLabel);
-            this.Controls.Add(this.topLabel);
             this.Controls.Add(this.panel1);
             this.Name = "ManagerMain";
             this.Text = "ManagerMain";
@@ -533,7 +500,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -584,8 +550,5 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip4;
         private System.Windows.Forms.ToolTip toolTip2;
-        private System.Windows.Forms.Label topLabel;
-        private System.Windows.Forms.Label nLabel;
-        private System.Windows.Forms.Label sLabel;
     }
 }
