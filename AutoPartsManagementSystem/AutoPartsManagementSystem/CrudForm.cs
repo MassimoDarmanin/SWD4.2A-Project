@@ -115,33 +115,47 @@ namespace AutoPartsManagementSystem
 
         private void insBtn_Click(object sender, EventArgs e)
         {
-            if (typeBox.SelectedItem == null)
+            if (nameBox.Text == "")
             {
-                MessageBox.Show("Please Select Table");
+                MessageBox.Show("Cannot leave Name empty");
             }
-            else if (typeBox.SelectedItem.ToString() == "Categories")
+            else
             {
-                string insQuery = "INSERT INTO Categories(CategoryName) VALUES ('" + nameBox.Text + "')";
-                doQuery(insQuery);
+                if (typeBox.SelectedItem == null)
+                {
+                    MessageBox.Show("Please Select Table");
+                }
+                else if (typeBox.SelectedItem.ToString() == "Categories")
+                {
+                    string insQuery = "INSERT INTO Categories(CategoryName) VALUES ('" + nameBox.Text + "')";
+                    doQuery(insQuery);
 
-                string query = "SELECT * FROM Categories";
-                Grid1.DataSource = getData(query);
-            }
-            else if (typeBox.SelectedItem.ToString() == "Make")
-            {
-                string insQuery = "INSERT INTO Make(MakeName) VALUES ('" + nameBox.Text + "')";
-                doQuery(insQuery);
+                    string query = "SELECT * FROM Categories";
+                    Grid1.DataSource = getData(query);
+                }
+                else if (typeBox.SelectedItem.ToString() == "Make")
+                {
+                    string insQuery = "INSERT INTO Make(MakeName) VALUES ('" + nameBox.Text + "')";
+                    doQuery(insQuery);
 
-                string query = "SELECT * FROM Make";
-                Grid1.DataSource = getData(query);
-            }
-            else if (typeBox.SelectedItem.ToString() == "Model")
-            {
-                string insQuery = "INSERT INTO Model(ModelName, MakeID) VALUES ('" + nameBox.Text + "','" + makeBox.Text + "')";
-                doQuery(insQuery);
+                    string query = "SELECT * FROM Make";
+                    Grid1.DataSource = getData(query);
+                }
+                else if (typeBox.SelectedItem.ToString() == "Model")
+                {
+                    if (makeBox.Text == "")
+                    {
+                        MessageBox.Show("Cannot leave Name empty");
+                    }
+                    else
+                    {
+                        string insQuery = "INSERT INTO Model(ModelName, MakeID) VALUES ('" + nameBox.Text + "','" + makeBox.Text + "')";
+                        doQuery(insQuery);
 
-                string query = "SELECT * FROM Model";
-                Grid1.DataSource = getData(query);
+                        string query = "SELECT * FROM Model";
+                        Grid1.DataSource = getData(query);
+                    }                    
+                }
             }
         }
 
@@ -153,27 +167,48 @@ namespace AutoPartsManagementSystem
             }
             else if (typeBox.SelectedItem.ToString() == "Categories")
             {
-                string upQuery = "UPDATE Categories SET CategoryName='" + nameBox.Text + "'WHERE CategoryID="+ idBox.Text;
-                doQuery(upQuery);
+                if (idBox.Text == "" || nameBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave fields empty");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Categories SET CategoryName='" + nameBox.Text + "'WHERE CategoryID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Categories";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Categories";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Make")
             {
-                string upQuery = "UPDATE Make SET  MakeName='" + nameBox.Text + "'WHERE MakeID=" + idBox.Text;
-                doQuery(upQuery);
+                if (idBox.Text == "" || nameBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave fields empty");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Make SET  MakeName='" + nameBox.Text + "'WHERE MakeID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Make";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Make";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Model")
             {
-                string upQuery = "UPDATE Model SET ModelName='" + nameBox.Text + "', MakeID='" + makeBox.Text + "'WHERE ModelID=" + idBox.Text;
-                doQuery(upQuery);
+                if (idBox.Text == "" || nameBox.Text == "" || makeBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave fields empty");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Model SET ModelName='" + nameBox.Text + "', MakeID='" + makeBox.Text + "'WHERE ModelID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Model";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Model";
+                    Grid1.DataSource = getData(query);
+                }                
             }
         }
 
@@ -185,27 +220,48 @@ namespace AutoPartsManagementSystem
             }
             else if (typeBox.SelectedItem.ToString() == "Categories")
             {
-                string delQuery = "DELETE FROM Categories WHERE CategoryID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave ID empty");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Categories WHERE CategoryID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Categories";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Categories";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Make")
             {
-                string delQuery = "DELETE FROM Make WHERE MakeID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave ID empty");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Make WHERE MakeID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Make";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Make";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Model")
             {
-                string delQuery = "DELETE FROM Model WHERE ModelID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave ID empty");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Model WHERE ModelID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Model";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Model";
+                    Grid1.DataSource = getData(query);
+                }                
             }
         }
 

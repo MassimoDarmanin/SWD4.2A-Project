@@ -17,3 +17,7 @@ C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSyste
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.ItemCrud.resources
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.CrudForm.resources
 C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.TableofContent.resources
+C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\bin\Debug\nunit.framework.dll
+C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\bin\Debug\nunit.framework.pdb
+C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\bin\Debug\nunit.framework.xml
+C:\Users\Massimo\Documents\4.2A\4.2A\Project\Assignment\AutoPartsManagementSystem\AutoPartsManagementSystem\obj\Debug\AutoPartsManagementSystem.csproj.CopyComplete

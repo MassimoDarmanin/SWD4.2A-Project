@@ -142,20 +142,41 @@ namespace AutoPartsManagementSystem
 
         private void insBtn_Click(object sender, EventArgs e)
         {
-            string insQuery = "INSERT INTO Parts (PartNo, PartName, PartValue, PartDescription, ModelID, CategoryID) VALUES ('" + noBox.Text + "','" + nameBox.Text + "','" + valueBox.Text + "','" + descBox.Text + "','" + modelBox.Text + "','" + catBox.Text + "')";
-            doQuery(insQuery);
+            if (noBox.Text == "" || valueBox.Text == "" || nameBox.Text == "" || modelBox.Text == "" || makeBox.Text == "" || catBox.Text == "")
+            {
+                MessageBox.Show("All Fields must contain data");
+            }
+            else
+            {
+                string insQuery = "INSERT INTO Parts (PartNo, PartName, PartValue, PartDescription, ModelID, CategoryID) VALUES ('" + noBox.Text + "','" + nameBox.Text + "','" + valueBox.Text + "','" + descBox.Text + "','" + modelBox.Text + "','" + catBox.Text + "')";
+                doQuery(insQuery);
+            }            
         }
 
         private void updBtn_Click(object sender, EventArgs e)
         {
-            string upQuery = "UPDATE Parts SET PartNo='" + noBox.Text + "', PartName='" + nameBox.Text + "', PartValue='" + valueBox.Text + "', PartDescription='" + descBox.Text + "', Parts.MakeID='" + makeBox.Text + "', Parts.ModelID='" + modelBox.Text + "', Parts.CategoryID='" + catBox.Text +"' WHERE PartID=" + noBox.Text;
-            doQuery(upQuery);
+            if (noBox.Text == "" || valueBox.Text == "" || nameBox.Text == "" || modelBox.Text == "" || makeBox.Text == "" || catBox.Text == "")
+            {
+                MessageBox.Show("All Fields must contain data");
+            }
+            else
+            {
+                string upQuery = "UPDATE Parts SET PartNo='" + noBox.Text + "', PartName='" + nameBox.Text + "', PartValue='" + valueBox.Text + "', PartDescription='" + descBox.Text + "', Parts.MakeID='" + makeBox.Text + "', Parts.ModelID='" + modelBox.Text + "', Parts.CategoryID='" + catBox.Text + "' WHERE PartID=" + noBox.Text;
+                doQuery(upQuery);
+            }            
         }
 
         private void delBtn_Click(object sender, EventArgs e)
         {
-            string delQuery = "DELETE FROM Parts WHERE PartNo=" + noBox.Text;
-            doQuery(delQuery);
+            if (noBox.Text == "")
+            {
+                MessageBox.Show("Cannot leave ID field empty");
+            }
+            else
+            {
+                string delQuery = "DELETE FROM Parts WHERE PartNo=" + noBox.Text;
+                doQuery(delQuery);
+            }            
         }
 
         //sets what to display on grid

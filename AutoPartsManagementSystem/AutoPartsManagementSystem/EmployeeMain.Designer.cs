@@ -73,7 +73,6 @@
             this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
-            this.topLabel = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -465,22 +464,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Part no.";
             // 
-            // topLabel
-            // 
-            this.topLabel.AutoSize = true;
-            this.topLabel.Location = new System.Drawing.Point(12, 24);
-            this.topLabel.Name = "topLabel";
-            this.topLabel.Size = new System.Drawing.Size(48, 13);
-            this.topLabel.TabIndex = 13;
-            this.topLabel.Text = "topLabel";
-            // 
             // EmployeeMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(842, 643);
-            this.Controls.Add(this.topLabel);
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeMain";
             this.Text = "EmployeeMain";
@@ -496,7 +485,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -546,6 +534,5 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip4;
         private System.Windows.Forms.ToolTip toolTip5;
-        private System.Windows.Forms.Label topLabel;
     }
 }

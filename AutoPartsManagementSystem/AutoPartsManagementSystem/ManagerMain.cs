@@ -132,6 +132,15 @@ namespace AutoPartsManagementSystem
             con.Close();
         }*/
 
+        public void addMethod()//Getting total value
+        {
+            value = Convert.ToDouble(valueBox.Text);
+            quantity = Convert.ToDouble(quantityBox.Text);
+            amount = value * quantity;
+            totalP += amount;
+            amountLbl.Text = totalP.ToString();
+        }
+
         private void addBtn_Click(object sender, EventArgs e)
         {
             if (quantityBox.Text == "" || searchBox.Text == "")//add btn validation
@@ -140,16 +149,22 @@ namespace AutoPartsManagementSystem
             }
             else
             {
-                //Getting total value
-                value = Convert.ToDouble(valueBox.Text);
-                quantity = Convert.ToDouble(quantityBox.Text);
-                amount = value * quantity;
-                totalP += amount;
-                amountLbl.Text = totalP.ToString();
+                int myInt;
+                bool isNumerical = int.TryParse(quantityBox.Text, out myInt); //if text inputted == number
 
+                if (isNumerical == true)
+                {
+                    //Getting total value
+                    addMethod();
 
-                //updating grid
-                Grid1.Rows.Add(searchBox.Text, nameBox.Text, valueBox.Text, quantityBox.Text, amount);
+                    //updating grid
+                    Grid1.Rows.Add(searchBox.Text, nameBox.Text, valueBox.Text, quantityBox.Text, amount);
+                }
+                else
+                {
+                    MessageBox.Show("Please input only integers");
+                }
+                    
             }
         }
 

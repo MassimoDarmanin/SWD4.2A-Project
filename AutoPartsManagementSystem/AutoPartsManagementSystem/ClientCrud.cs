@@ -70,20 +70,48 @@ namespace AutoPartsManagementSystem
 
         private void insBtn_Click(object sender, EventArgs e)
         {
-            string insQuery = "INSERT INTO Clients(ClientName, ClientSurname) VALUES ('" + nameBox.Text + "','" + surnameBox.Text + "')";
-            doQuery(insQuery);
+            if (nameBox.Text == "" || surnameBox.Text == "")
+            {
+                MessageBox.Show("Cannot leave fields empty");
+            }
+            else
+            {
+                string insQuery = "INSERT INTO Clients(ClientName, ClientSurname) VALUES ('" + nameBox.Text + "','" + surnameBox.Text + "')";
+                doQuery(insQuery);
+            }
         }
 
         private void updBtn_Click(object sender, EventArgs e)
         {
-            string upQuery = "UPDATE Clients SET ClientName='" + nameBox.Text + "', ClientSurname='" + surnameBox.Text + "' WHERE ClientID=" + idBox.Text;
-            doQuery(upQuery);
+            if (idBox.Text == "")
+            {
+                MessageBox.Show("Please Select ID");
+            }
+            else
+            {
+                if (nameBox.Text == "" || surnameBox.Text == "")
+                {
+                    MessageBox.Show("Cannot leave fields empty");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Clients SET ClientName='" + nameBox.Text + "', ClientSurname='" + surnameBox.Text + "' WHERE ClientID=" + idBox.Text;
+                    doQuery(upQuery);
+                }
+            }
         }
 
         private void delBtn_Click(object sender, EventArgs e)
         {
-            string delQuery = "DELETE FROM Clients WHERE ClientID=" + idBox.Text;
-            doQuery(delQuery);
+            if (idBox.Text == "")
+            {
+                MessageBox.Show("Please Select ID");
+            }
+            else
+            {
+                string delQuery = "DELETE FROM Clients WHERE ClientID=" + idBox.Text;
+                doQuery(delQuery);
+            }
         }
 
         private void DisplayData()

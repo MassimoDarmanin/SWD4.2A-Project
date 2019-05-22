@@ -32,49 +32,58 @@ namespace AutoPartsManagementSystem
 
             sda.Fill(dt);
 
-            if (dt.Rows.Count <= 0)
+            if (userBox.Text == "" || pwBox.Text == "")
             {
-                MessageBox.Show("Username or Password incorrect");
-                con.Close();
+                MessageBox.Show("Enter Username & Password");
             }
             else
             {
-                con.Close();//closing for first query
-                con.Open();//opening for second query
-                String sqlSelectQuery = "SELECT * FROM Users WHERE Username = '" + userBox.Text + "'"; //2nd query
-                SqlCommand cmd = new SqlCommand(sqlSelectQuery, con);
-                SqlDataReader sdr = cmd.ExecuteReader();
-
-                if (sdr.Read())
-                {
-                    bool type = ((bool)sdr["AdminRights"]);
-
-                    if (type == true)
-                    {
-                        this.Hide();
-
-                        ManagerMain mmp = new ManagerMain();
-                        mmp.Show();
-                        user = userBox.Text;
-                        con.Close();         
-                    }
-                    else
-                    {
-                        this.Hide();
-
-                        EmployeeMain mmp = new EmployeeMain();
-                        mmp.Show();
-                        user = userBox.Text;
-                        con.Close();
-                    }
-                }
-                else
+                if (dt.Rows.Count <= 0)
                 {
                     MessageBox.Show("Username or Password incorrect");
                     con.Close();
                 }
-                
+                else
+                {
+                    con.Close();//closing for first query
+                    con.Open();//opening for second query
+                    String sqlSelectQuery = "SELECT * FROM Users WHERE Username = '" + userBox.Text + "'"; //2nd query
+                    SqlCommand cmd = new SqlCommand(sqlSelectQuery, con);
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    if (sdr.Read())
+                    {
+                        bool type = ((bool)sdr["AdminRights"]);
+
+                        if (type == true)
+                        {
+                            this.Hide();
+
+                            ManagerMain mmp = new ManagerMain();
+                            mmp.Show();
+                            user = userBox.Text;
+                            con.Close();
+                        }
+                        else
+                        {
+                            this.Hide();
+
+                            EmployeeMain mmp = new EmployeeMain();
+                            mmp.Show();
+                            user = userBox.Text;
+                            con.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username or Password incorrect");
+                        con.Close();
+                    }
+
+                }
             }
+
+            
             //string UserType = typeBox.SelectedText; //getting data from cb
             //combobox validation
             /* if (typeBox.SelectedItem.ToString() == "Manager") { //for managers

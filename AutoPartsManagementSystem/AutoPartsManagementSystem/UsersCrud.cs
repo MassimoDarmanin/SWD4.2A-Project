@@ -109,35 +109,56 @@ namespace AutoPartsManagementSystem
             }
             else if (typeBox.SelectedItem.ToString() == "Managers")
             {
-                string insQuery = "INSERT INTO Managers(ManagerName, ManagerSurname, UserID) VALUES ('" + nameBox.Text + "','" +surnameBox.Text+ "','" +userIDbox.Text+ "')";
-                doQuery(insQuery);
-
-                string query = "SELECT * FROM Managers";
-                Grid1.DataSource = getData(query);
-            }
-            else if (typeBox.SelectedItem.ToString() == "Employees")
-            {
-                string insQuery = "INSERT INTO Employees(EmployeeName, EmployeeSurname, UserID) VALUES ('" + nameBox.Text + "','" + surnameBox.Text + "','" + userIDbox.Text + "')";
-                doQuery(insQuery);
-
-                string query = "SELECT * FROM Employees";
-                Grid1.DataSource = getData(query);
-            }
-            else if (typeBox.SelectedItem.ToString() == "Usernames")
-            {
-                if (adminBox.Text == "1" || adminBox.Text == "0")
+                if(nameBox.Text == "" || surnameBox.Text == "" || userIDbox.Text == "")
                 {
-
-                    string insQuery = "INSERT INTO Users(Username, Password, AdminRights) VALUES ('" + userBox.Text + "','" + pwBox.Text + "','" + adminBox.Text + "')";
-                    doQuery(insQuery);
-
-                    string query = "SELECT * FROM Users";
-                    Grid1.DataSource = getData(query);
+                    MessageBox.Show("Cannot Leave Name, Surname or UserID empty");
                 }
                 else
                 {
-                    MessageBox.Show("Inputs should only consist of '1' or '0'");
+                    string insQuery = "INSERT INTO Managers(ManagerName, ManagerSurname, UserID) VALUES ('" + nameBox.Text + "','" + surnameBox.Text + "','" + userIDbox.Text + "')";
+                    doQuery(insQuery);
+
+                    string query = "SELECT * FROM Managers";
+                    Grid1.DataSource = getData(query);
                 }
+            }
+            else if (typeBox.SelectedItem.ToString() == "Employees")
+            {
+                if (nameBox.Text == "" || surnameBox.Text == "" || userIDbox.Text == "")
+                {
+                    MessageBox.Show("Cannot Leave Name, Surname or UserID empty");
+                }
+                else
+                {
+                    string insQuery = "INSERT INTO Employees(EmployeeName, EmployeeSurname, UserID) VALUES ('" + nameBox.Text + "','" + surnameBox.Text + "','" + userIDbox.Text + "')";
+                    doQuery(insQuery);
+
+                    string query = "SELECT * FROM Employees";
+                    Grid1.DataSource = getData(query);
+                }                
+            }
+            else if (typeBox.SelectedItem.ToString() == "Usernames")
+            {
+                if (nameBox.Text == "" || surnameBox.Text == "" || userIDbox.Text == "" || adminBox.Text == "")
+                {
+                    MessageBox.Show("Cannot Leave Name, Surname or Admin rights empty");
+                }
+                else
+                {
+                    if (adminBox.Text == "1" || adminBox.Text == "0")
+                    {
+
+                        string insQuery = "INSERT INTO Users(Username, Password, AdminRights) VALUES ('" + userBox.Text + "','" + pwBox.Text + "','" + adminBox.Text + "')";
+                        doQuery(insQuery);
+
+                        string query = "SELECT * FROM Users";
+                        Grid1.DataSource = getData(query);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Inputs should only consist of '1' or '0'");
+                    }
+                }                
             }
         }
 
@@ -150,27 +171,48 @@ namespace AutoPartsManagementSystem
             }
             else if (typeBox.SelectedItem.ToString() == "Managers")
             {
-                string upQuery = "UPDATE Managers SET ManagerName='" + nameBox.Text + "', ManagerSurname='" +surnameBox.Text+ "', UserID='" +userIDbox.Text+ "'WHERE ManagerID=" + idBox.Text;
-                doQuery(upQuery);
+                if(nameBox.Text == "" || idBox.Text == "" || userIDbox.Text == "" || surnameBox.Text == "")
+                {
+                    MessageBox.Show("Must fill all fields");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Managers SET ManagerName='" + nameBox.Text + "', ManagerSurname='" + surnameBox.Text + "', UserID='" + userIDbox.Text + "'WHERE ManagerID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Managers";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Managers";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Employees")
             {
-                string upQuery = "UPDATE Employees SET EmployeeName='" + nameBox.Text + "', EmployeeSurname='" + surnameBox.Text + "', UserID='" + userIDbox.Text + "'WHERE EmployeeID=" + idBox.Text;
-                doQuery(upQuery);
+                if (nameBox.Text == "" || idBox.Text == "" || userIDbox.Text == "" || surnameBox.Text == "")
+                {
+                    MessageBox.Show("Must fill all fields");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Employees SET EmployeeName='" + nameBox.Text + "', EmployeeSurname='" + surnameBox.Text + "', UserID='" + userIDbox.Text + "'WHERE EmployeeID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Employees";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Employees";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Users")
             {
-                string upQuery = "UPDATE Users SET Username='" + userBox.Text + "', Password='" + pwBox.Text + "', AdminRights='" + adminBox.Text + "'WHERE UserID=" + idBox.Text;
-                doQuery(upQuery);
+                if (userBox.Text == "" || pwBox.Text == "" || adminBox.Text == "" || idBox.Text == "")
+                {
+                    MessageBox.Show("Must fill all fields");
+                }
+                else
+                {
+                    string upQuery = "UPDATE Users SET Username='" + userBox.Text + "', Password='" + pwBox.Text + "', AdminRights='" + adminBox.Text + "'WHERE UserID=" + idBox.Text;
+                    doQuery(upQuery);
 
-                string query = "SELECT * FROM Users";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Users";
+                    Grid1.DataSource = getData(query);
+                }                
             }
         }
 
@@ -182,27 +224,48 @@ namespace AutoPartsManagementSystem
             }
             else if (typeBox.SelectedItem.ToString() == "Managers")
             {
-                string delQuery = "DELETE FROM Managers WHERE ManagerID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Enter ID number");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Managers WHERE ManagerID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Managers";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Managers";
+                    Grid1.DataSource = getData(query);
+                }                
             }
             else if (typeBox.SelectedItem.ToString() == "Employees")
             {
-                string delQuery = "DELETE FROM Employees WHERE EmployeeID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Enter ID number");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Employees WHERE EmployeeID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Employees";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Employees";
+                    Grid1.DataSource = getData(query);
+                }                    
             }
             else if (typeBox.SelectedItem.ToString() == "Users")
             {
-                string delQuery = "DELETE FROM Users WHERE UserID=" + idBox.Text;
-                doQuery(delQuery);
+                if (idBox.Text == "")
+                {
+                    MessageBox.Show("Enter ID number");
+                }
+                else
+                {
+                    string delQuery = "DELETE FROM Users WHERE UserID=" + idBox.Text;
+                    doQuery(delQuery);
 
-                string query = "SELECT * FROM Users";
-                Grid1.DataSource = getData(query);
+                    string query = "SELECT * FROM Users";
+                    Grid1.DataSource = getData(query);
+                }                
             }
         }
 
